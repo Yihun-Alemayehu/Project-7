@@ -11,8 +11,38 @@ class MusicPlayerInitial extends MusicPlayerState {}
 
 class MusicPlayerLoading extends MusicPlayerState {}
 
-class MusicPlayerPlaying extends MusicPlayerState{}
+class MusicPlayerPlaying extends MusicPlayerState{
+  final Song currentSong;
 
-class MusicPlayerPaused extends MusicPlayerState{}
+  const MusicPlayerPlaying({required this.currentSong});
 
-class MusicPlayerCompleted extends MusicPlayerState{}
+  @override
+  List<Object> get props => [currentSong];
+}
+
+class MusicPlayerPaused extends MusicPlayerState{
+  final Song currentSong;
+
+  const MusicPlayerPaused({required this.currentSong});
+
+  @override
+  List<Object> get props => [currentSong];
+}
+
+class MusicPlayerCompleted extends MusicPlayerState{
+  final Song currentSong;
+
+  const MusicPlayerCompleted({required this.currentSong});
+
+  @override
+  List<Object> get props => [currentSong];
+}
+
+class MusicPlayerError extends MusicPlayerState{
+  final String errorMessage;
+
+  const MusicPlayerError({required this.errorMessage});
+
+  @override
+  List<Object> get props => [errorMessage];
+}
