@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:project_7/bloc/music_player_bloc.dart';
 import 'package:project_7/screens/home_screen.dart';
 
-void main(){
+void main() {
   runApp(const MyApp());
 }
 
@@ -10,8 +12,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomeScreen(),
+    return BlocProvider(
+      create: (context) => MusicPlayerBloc()..add(LoadSongEvent()),
+      child: const MaterialApp(
+        home: HomeScreen(),
+      ),
     );
   }
 }
