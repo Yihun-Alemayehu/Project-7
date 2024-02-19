@@ -6,8 +6,14 @@ part 'music_player_state.dart';
 
 class MusicPlayerBloc extends Bloc<MusicPlayerEvent, MusicPlayerState> {
   MusicPlayerBloc() : super(MusicPlayerInitial()) {
-    on<MusicPlayerEvent>((event, emit) {
-      // TODO: implement event handler
+    on<PlayEvent>((event, emit) {
+      
+    });
+    on<PauseEvent>((event, emit) {
+      
+    });
+    on<SkipEvent>((event, emit) {
+      
     });
   }
 }
